@@ -18,12 +18,16 @@
     sqlite3 *db;
 
 }
-
+@property (readwrite) NSInteger eventNum;
 @property (nonatomic, strong) NSMutableArray *xFitArray;
-- (IBAction)parseCSV:(id)sender;
-- (IBAction)showEventOne:(id)sender;
-
 @property (strong, nonatomic) IBOutlet DrawingClass *canv;
 
+- (IBAction)showOverall:(id)sender;
+- (IBAction)showEventOne:(id)sender;
+- (IBAction)showEventTwo:(id)sender;
+- (IBAction)showEventThree:(id)sender;
+- (IBAction)showEventFour:(id)sender;
+- (IBAction)showEventFive:(id)sender;
+- (IBAction)showEventSix:(id)sender;
 
 @end

@@ -11,5 +11,8 @@
 
 @interface DrawingClass : UIView
 @property (nonatomic, strong) NSMutableArray *xFitArray;
+@property (readwrite) NSInteger eventType;
+
 -(void) fillXFitArray:(NSMutableArray *) inXFit;
+-(void) whichEvent:(NSInteger) num;
 @end
