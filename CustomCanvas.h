@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  Canvas.h
 //  2011CrossfitViz
 //
 //  Created by Ryan Rusnak on 4/8/12.
@@ -7,23 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import "XFitData.h"
-#import "sqlite3.h"
 #import <CoreGraphics/CoreGraphics.h>
-#import "DrawingClass.h"
+#import "ViewController.h"
 
-@interface ViewController : UIViewController{
-    
-    sqlite3 *db;
-
-}
+@interface CustomCanvas : UIView
 
 @property (nonatomic, strong) NSMutableArray *xFitArray;
-- (IBAction)parseCSV:(id)sender;
-- (IBAction)showEventOne:(id)sender;
-
-@property (strong, nonatomic) IBOutlet DrawingClass *canv;
-
-
+-(void) fillXFitArray:(NSMutableArray *) inXFit;
 @end

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4902369315432EFD00F73253 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4902369215432EFD00F73253 /* logo.png */; };
+		498EC426153F64C300F42F91 /* xfit2011SQL.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 498EC425153F64C300F42F91 /* xfit2011SQL.sqlite */; };
+		498EC428153F655900F42F91 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 498EC427153F655900F42F91 /* libsqlite3.0.dylib */; };
+		498EC42C153F68F700F42F91 /* XFitData.m in Sources */ = {isa = PBXBuildFile; fileRef = 498EC42B153F68F700F42F91 /* XFitData.m */; };
+		498EC436153FC10800F42F91 /* DrawingClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 498EC435153FC10800F42F91 /* DrawingClass.m */; };
 		49CB70111531E069006C620F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CB70101531E069006C620F /* UIKit.framework */; };
 		49CB70131531E069006C620F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CB70121531E069006C620F /* Foundation.framework */; };
 		49CB70151531E069006C620F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CB70141531E069006C620F /* CoreGraphics.framework */; };
@@ -18,18 +23,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4902369215432EFD00F73253 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		498EC425153F64C300F42F91 /* xfit2011SQL.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = xfit2011SQL.sqlite; sourceTree = "<group>"; };
+		498EC427153F655900F42F91 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		498EC42A153F68F700F42F91 /* XFitData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFitData.h; sourceTree = "<group>"; };
+		498EC42B153F68F700F42F91 /* XFitData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFitData.m; sourceTree = "<group>"; };
+		498EC434153FC10800F42F91 /* DrawingClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingClass.h; sourceTree = "<group>"; };
+		498EC435153FC10800F42F91 /* DrawingClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingClass.m; sourceTree = "<group>"; };
 		49CB700C1531E069006C620F /* 2011CrossfitViz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2011CrossfitViz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49CB70101531E069006C620F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49CB70121531E069006C620F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		49CB70141531E069006C620F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		49CB70181531E069006C620F /* 2011CrossfitViz-Info.plist */ = {isa = PBXFileReference; path = "2011CrossfitViz-Info.plist"; sourceTree = "<group>"; };
+		49CB70181531E069006C620F /* 2011CrossfitViz-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "2011CrossfitViz-Info.plist"; sourceTree = "<group>"; };
 		49CB701A1531E069006C620F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49CB701C1531E069006C620F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		49CB701E1531E069006C620F /* 2011CrossfitViz-Prefix.pch */ = {isa = PBXFileReference; path = "2011CrossfitViz-Prefix.pch"; sourceTree = "<group>"; };
-		49CB701F1531E069006C620F /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		49CB701E1531E069006C620F /* 2011CrossfitViz-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "2011CrossfitViz-Prefix.pch"; sourceTree = "<group>"; };
+		49CB701F1531E069006C620F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		49CB70201531E069006C620F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		49CB70231531E069006C620F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		49CB70251531E069006C620F /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		49CB70251531E069006C620F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		49CB70261531E069006C620F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -38,15 +50,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49CB70151531E069006C620F /* CoreGraphics.framework in Frameworks */,
+				498EC428153F655900F42F91 /* libsqlite3.0.dylib in Frameworks */,
 				49CB70111531E069006C620F /* UIKit.framework in Frameworks */,
 				49CB70131531E069006C620F /* Foundation.framework in Frameworks */,
-				49CB70151531E069006C620F /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		498EC429153F67E600F42F91 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				498EC42A153F68F700F42F91 /* XFitData.h */,
+				498EC42B153F68F700F42F91 /* XFitData.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		49CB70011531E069006C620F = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +89,7 @@
 		49CB700F1531E069006C620F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				498EC427153F655900F42F91 /* libsqlite3.0.dylib */,
 				49CB70101531E069006C620F /* UIKit.framework */,
 				49CB70121531E069006C620F /* Foundation.framework */,
 				49CB70141531E069006C620F /* CoreGraphics.framework */,
@@ -77,11 +100,15 @@
 		49CB70161531E069006C620F /* 2011CrossfitViz */ = {
 			isa = PBXGroup;
 			children = (
+				498EC429153F67E600F42F91 /* Model */,
+				498EC425153F64C300F42F91 /* xfit2011SQL.sqlite */,
 				49CB701F1531E069006C620F /* AppDelegate.h */,
 				49CB70201531E069006C620F /* AppDelegate.m */,
 				49CB70221531E069006C620F /* MainStoryboard.storyboard */,
 				49CB70251531E069006C620F /* ViewController.h */,
 				49CB70261531E069006C620F /* ViewController.m */,
+				498EC434153FC10800F42F91 /* DrawingClass.h */,
+				498EC435153FC10800F42F91 /* DrawingClass.m */,
 				49CB70171531E069006C620F /* Supporting Files */,
 			);
 			path = 2011CrossfitViz;
@@ -90,6 +117,7 @@
 		49CB70171531E069006C620F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4902369215432EFD00F73253 /* logo.png */,
 				49CB70181531E069006C620F /* 2011CrossfitViz-Info.plist */,
 				49CB70191531E069006C620F /* InfoPlist.strings */,
 				49CB701C1531E069006C620F /* main.m */,
@@ -150,6 +178,8 @@
 			files = (
 				49CB701B1531E069006C620F /* InfoPlist.strings in Resources */,
 				49CB70241531E069006C620F /* MainStoryboard.storyboard in Resources */,
+				498EC426153F64C300F42F91 /* xfit2011SQL.sqlite in Resources */,
+				4902369315432EFD00F73253 /* logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +193,8 @@
 				49CB701D1531E069006C620F /* main.m in Sources */,
 				49CB70211531E069006C620F /* AppDelegate.m in Sources */,
 				49CB70271531E069006C620F /* ViewController.m in Sources */,
+				498EC42C153F68F700F42F91 /* XFitData.m in Sources */,
+				498EC436153FC10800F42F91 /* DrawingClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +308,7 @@
 				49CB702C1531E069006C620F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
