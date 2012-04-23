@@ -46,6 +46,7 @@
     self.canv.xFitArray = [[NSMutableArray alloc]init];
 	// Do any additional setup after loading the view, typically from a nib.
     xFitArray = [[NSMutableArray alloc] init];
+    [buttonEventThree setEnabled:FALSE];
     
     overallButtonFrame = overallButton.frame;
     eventOneFrame = buttonEventOne.frame;
@@ -126,6 +127,7 @@
     //NSMutableArray *xFitArray = [[NSMutableArray alloc] init];
     @try {
         eventNum = 0;
+        titleText.text = @"Overall Points";
         [self.canv whichEvent:eventNum];
         [xFitArray removeAllObjects];
         NSFileManager *fileMgr = [NSFileManager defaultManager];
@@ -174,6 +176,7 @@
     
     @try {
         eventNum = 1;
+        titleText.text = @"Event One 2011";
         workoutLabel.text = @"10 minute AMRAP: 30 Double-unders 15 Power snatches";
         [self.canv whichEvent:eventNum];
         [xFitArray removeAllObjects];
@@ -223,6 +226,7 @@
     
     @try {
         eventNum = 2;
+        titleText.text = @"Event Two 2011";
         workoutLabel.text = @"15 minute AMRAP: 9 Deadlifts (155lbs / 70kg) 12 Push-ups 15 Box jumps (24 inch)";
         [self.canv whichEvent:eventNum];
         [xFitArray removeAllObjects];
@@ -270,6 +274,7 @@
 - (IBAction)showEventThree:(id)sender {
     @try {
         eventNum = 3;
+        titleText.text = @"Event Three 2011";
         workoutLabel.text = @"5 minute AMRAP: 165 pound Squat clean 165 pound Jerk";
         [self.canv whichEvent:eventNum];
         [xFitArray removeAllObjects];
@@ -278,7 +283,7 @@
         BOOL success = [fileMgr fileExistsAtPath:dbPath];
         if(!success)
         {
-            NSLog(@"Cannot locate database file '%@'.", dbPath);
+            NSLog(@"Cannot locate database file.");
         }
         if(!(sqlite3_open([dbPath UTF8String], &db) == SQLITE_OK))
         {
@@ -316,6 +321,7 @@
 - (IBAction)showEventFour:(id)sender {
     @try {
         eventNum = 4;
+        titleText.text = @"Event Four 2011";
         workoutLabel.text = @"10 minute AMRAP: 60 Bar-facing burpees120 pound Overhead squat, 30 reps10 Muscle-ups";
         [self.canv whichEvent:eventNum];
         [xFitArray removeAllObjects];
@@ -363,6 +369,7 @@
 - (IBAction)showEventFive:(id)sender {
     @try {
         eventNum = 5;
+        titleText.text = @"Event Five 2011";
         workoutLabel.text = @"20 minute AMRAP: 5 Power cleans (145lbs / 65kg) 10 Toes to bar 15 Wall balls (20lbs to 10' target) ";
         [self.canv whichEvent:eventNum];
         [xFitArray removeAllObjects];
@@ -410,6 +417,7 @@
 - (IBAction)showEventSix:(id)sender {
     @try {
         eventNum = 6;
+        titleText.text = @"Event Six 2011";
         workoutLabel.text = @"7 minute AMRAP: 3 Barbell Thrusters 3 Chest to bar Pull-ups 6 Barbell Thrusters 6 Chest to bar Pull-ups 9 Barbell Thrusters 9 Chest to bar Pull-ups 12 Barbell Thrusters 12 Chest to bar Pull-ups 15 Barbell Thrusters 15 Chest to bar Pull-ups 18 Barbell Thrusters 18 Chest to bar Pull-ups 21 Barbell Thrusters 21 Chest to bar Pull-ups... This is a timed workout. If you complete the round of 21, go on to 24. If you complete 24, go on to 27, etc. ";
         [self.canv whichEvent:eventNum];
         [xFitArray removeAllObjects];
@@ -470,6 +478,9 @@
 - (IBAction)swipeClosedMenu:(UISwipeGestureRecognizer*)sender {
     
     if (menuOpen == TRUE){
+        CGPoint touch = [sender locationOfTouch:0 inView:self.canv];
+        if(touch.x < 250){
+        [buttonEventThree setEnabled:FALSE];
         [UIView animateWithDuration:0.4
                               delay:0
                             options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveEaseInOut
@@ -504,11 +515,15 @@
     menuOpen = FALSE;
     }
 }
+}
 
 
 - (IBAction)swipedMenu:(UISwipeGestureRecognizer*)sender {
     
     if(menuOpen == FALSE){
+        CGPoint touch = [sender locationOfTouch:0 inView:self.canv];
+        if(touch.x < 250){
+        [buttonEventThree setEnabled:TRUE];
         [UIView animateWithDuration:0.4
                               delay:0
                             options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveEaseInOut
@@ -542,14 +557,19 @@
     
     menuOpen = TRUE;
     }
+    }
 }
 - (IBAction)userPinched:(UIPinchGestureRecognizer*)sender {
     
+    if (constrainIcon.hidden == NO){
+    CGPoint touch = [sender locationOfTouch:0 inView:self.canv];
+    if(touch.x > 900){
     int heightConstraint = 67;
     
     CGFloat scale = [(UIPinchGestureRecognizer *)sender scale];
-    if (heightConstraint > 54 || heightConstraint < 81){
+    if (heightConstraint > 54 && heightConstraint < 81){
             heightConstraint = heightConstraint *(sender.scale / 1.5);
+        NSLog(@"HeightConstraint is %d", heightConstraint);
     }
     
     NSString *resultString = [[NSString alloc] initWithFormat:@"%d'",heightConstraint];
@@ -587,7 +607,7 @@
         }
         if(!(sqlite3_open([dbPath UTF8String], &db) == SQLITE_OK))
         {
-            NSLog(@"An error has occured.");
+            NSLog(@"An error has occured, %s", sqlite3_errmsg(db));
            // NSLog(@"Event column:%@ and height: %d",eventColumn, heightConstraint);
         }
         const char *sql =[[NSString stringWithFormat:@"SELECT ID, Name, weight, height, %@, gender FROM  xfit2011 WHERE height = %d",eventColumn,heightConstraint] UTF8String];
@@ -609,6 +629,8 @@
             myXFitData.gender = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement,5)];
             [xFitArray addObject:myXFitData];
         }
+        sqlite3_finalize(sqlStatement);
+        sqlite3_close(db);
         [self.canv fillXFitArray:xFitArray];
         [self.view setNeedsDisplay];
         
@@ -617,7 +639,9 @@
         NSLog(@"An exception occured: %@", [exception reason]);
     }
     @finally {
-        //return xFitArray;
+        //sqlite3_close(db);
     } 
+}
+    }
 }
 @end

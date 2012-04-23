@@ -30,6 +30,7 @@
 		49CB70211531E069006C620F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CB70201531E069006C620F /* AppDelegate.m */; };
 		49CB70241531E069006C620F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CB70221531E069006C620F /* MainStoryboard.storyboard */; };
 		49CB70271531E069006C620F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CB70261531E069006C620F /* ViewController.m */; };
+		49F6B05E1545F0C200CA44E2 /* Bank Gothic in Resources */ = {isa = PBXBuildFile; fileRef = 49F6B05D1545F0C200CA44E2 /* Bank Gothic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		49CB70231531E069006C620F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		49CB70251531E069006C620F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		49CB70261531E069006C620F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		49F6B05D1545F0C200CA44E2 /* Bank Gothic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Bank Gothic"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 		49CB70171531E069006C620F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				49F6B05D1545F0C200CA44E2 /* Bank Gothic */,
 				490236B51545096700F73253 /* xFitButton113_2.png */,
 				490236B31545070900F73253 /* xFitButtonTotal.png */,
 				490236A91545064D00F73253 /* xfitbutton112.png */,
@@ -220,6 +223,7 @@
 				490236B21545064E00F73253 /* xFitButton116.png in Resources */,
 				490236B41545070900F73253 /* xFitButtonTotal.png in Resources */,
 				490236B61545096700F73253 /* xFitButton113_2.png in Resources */,
+				49F6B05E1545F0C200CA44E2 /* Bank Gothic in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
