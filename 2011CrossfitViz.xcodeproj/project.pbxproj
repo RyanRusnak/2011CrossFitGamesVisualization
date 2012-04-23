@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		4902369315432EFD00F73253 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4902369215432EFD00F73253 /* logo.png */; };
+		4902369E1544659000F73253 /* black-diamond-plate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4902369D1544659000F73253 /* black-diamond-plate.jpg */; };
+		490236A01544991300F73253 /* xFitButton111.png in Resources */ = {isa = PBXBuildFile; fileRef = 4902369F1544991300F73253 /* xFitButton111.png */; };
+		490236A21544D5E300F73253 /* xfitConstrain.png in Resources */ = {isa = PBXBuildFile; fileRef = 490236A11544D5E300F73253 /* xfitConstrain.png */; };
+		490236A41544D86400F73253 /* xfitConstrainMan.png in Resources */ = {isa = PBXBuildFile; fileRef = 490236A31544D86300F73253 /* xfitConstrainMan.png */; };
+		490236AE1545064E00F73253 /* xfitbutton112.png in Resources */ = {isa = PBXBuildFile; fileRef = 490236A91545064D00F73253 /* xfitbutton112.png */; };
+		490236B01545064E00F73253 /* xFitButton114.png in Resources */ = {isa = PBXBuildFile; fileRef = 490236AB1545064E00F73253 /* xFitButton114.png */; };
+		490236B11545064E00F73253 /* xFitButton115.png in Resources */ = {isa = PBXBuildFile; fileRef = 490236AC1545064E00F73253 /* xFitButton115.png */; };
+		490236B21545064E00F73253 /* xFitButton116.png in Resources */ = {isa = PBXBuildFile; fileRef = 490236AD1545064E00F73253 /* xFitButton116.png */; };
+		490236B41545070900F73253 /* xFitButtonTotal.png in Resources */ = {isa = PBXBuildFile; fileRef = 490236B31545070900F73253 /* xFitButtonTotal.png */; };
+		490236B61545096700F73253 /* xFitButton113_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 490236B51545096700F73253 /* xFitButton113_2.png */; };
 		498EC426153F64C300F42F91 /* xfit2011SQL.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 498EC425153F64C300F42F91 /* xfit2011SQL.sqlite */; };
 		498EC428153F655900F42F91 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 498EC427153F655900F42F91 /* libsqlite3.0.dylib */; };
 		498EC42C153F68F700F42F91 /* XFitData.m in Sources */ = {isa = PBXBuildFile; fileRef = 498EC42B153F68F700F42F91 /* XFitData.m */; };
@@ -24,6 +34,16 @@
 
 /* Begin PBXFileReference section */
 		4902369215432EFD00F73253 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		4902369D1544659000F73253 /* black-diamond-plate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "black-diamond-plate.jpg"; sourceTree = "<group>"; };
+		4902369F1544991300F73253 /* xFitButton111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xFitButton111.png; sourceTree = "<group>"; };
+		490236A11544D5E300F73253 /* xfitConstrain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xfitConstrain.png; sourceTree = "<group>"; };
+		490236A31544D86300F73253 /* xfitConstrainMan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xfitConstrainMan.png; sourceTree = "<group>"; };
+		490236A91545064D00F73253 /* xfitbutton112.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xfitbutton112.png; sourceTree = "<group>"; };
+		490236AB1545064E00F73253 /* xFitButton114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xFitButton114.png; sourceTree = "<group>"; };
+		490236AC1545064E00F73253 /* xFitButton115.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xFitButton115.png; sourceTree = "<group>"; };
+		490236AD1545064E00F73253 /* xFitButton116.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xFitButton116.png; sourceTree = "<group>"; };
+		490236B31545070900F73253 /* xFitButtonTotal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xFitButtonTotal.png; sourceTree = "<group>"; };
+		490236B51545096700F73253 /* xFitButton113_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xFitButton113_2.png; sourceTree = "<group>"; };
 		498EC425153F64C300F42F91 /* xfit2011SQL.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = xfit2011SQL.sqlite; sourceTree = "<group>"; };
 		498EC427153F655900F42F91 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		498EC42A153F68F700F42F91 /* XFitData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFitData.h; sourceTree = "<group>"; };
@@ -117,6 +137,16 @@
 		49CB70171531E069006C620F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				490236B51545096700F73253 /* xFitButton113_2.png */,
+				490236B31545070900F73253 /* xFitButtonTotal.png */,
+				490236A91545064D00F73253 /* xfitbutton112.png */,
+				490236AB1545064E00F73253 /* xFitButton114.png */,
+				490236AC1545064E00F73253 /* xFitButton115.png */,
+				490236AD1545064E00F73253 /* xFitButton116.png */,
+				490236A31544D86300F73253 /* xfitConstrainMan.png */,
+				490236A11544D5E300F73253 /* xfitConstrain.png */,
+				4902369F1544991300F73253 /* xFitButton111.png */,
+				4902369D1544659000F73253 /* black-diamond-plate.jpg */,
 				4902369215432EFD00F73253 /* logo.png */,
 				49CB70181531E069006C620F /* 2011CrossfitViz-Info.plist */,
 				49CB70191531E069006C620F /* InfoPlist.strings */,
@@ -180,6 +210,16 @@
 				49CB70241531E069006C620F /* MainStoryboard.storyboard in Resources */,
 				498EC426153F64C300F42F91 /* xfit2011SQL.sqlite in Resources */,
 				4902369315432EFD00F73253 /* logo.png in Resources */,
+				4902369E1544659000F73253 /* black-diamond-plate.jpg in Resources */,
+				490236A01544991300F73253 /* xFitButton111.png in Resources */,
+				490236A21544D5E300F73253 /* xfitConstrain.png in Resources */,
+				490236A41544D86400F73253 /* xfitConstrainMan.png in Resources */,
+				490236AE1545064E00F73253 /* xfitbutton112.png in Resources */,
+				490236B01545064E00F73253 /* xFitButton114.png in Resources */,
+				490236B11545064E00F73253 /* xFitButton115.png in Resources */,
+				490236B21545064E00F73253 /* xFitButton116.png in Resources */,
+				490236B41545070900F73253 /* xFitButtonTotal.png in Resources */,
+				490236B61545096700F73253 /* xFitButton113_2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

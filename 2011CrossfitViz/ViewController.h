@@ -13,10 +13,21 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "DrawingClass.h"
 
-@interface ViewController : UIViewController{
+@interface ViewController : UIViewController <UIGestureRecognizerDelegate>{
     
     sqlite3 *db;
 
+    CGRect overallButtonFrame;
+    CGRect eventOneFrame;
+    CGRect eventTwoFrame;
+    CGRect eventThreeFrame;
+    CGRect eventFourFrame;
+    CGRect eventFiveFrame;
+    CGRect eventSixFrame;
+    CGRect buttonConstrainFrame;
+    CGRect constrainIconFrame;
+    
+    BOOL menuOpen;
 }
 @property (readwrite) NSInteger eventNum;
 @property (nonatomic, strong) NSMutableArray *xFitArray;
@@ -29,5 +40,33 @@
 - (IBAction)showEventFour:(id)sender;
 - (IBAction)showEventFive:(id)sender;
 - (IBAction)showEventSix:(id)sender;
+- (IBAction)constrainByHeight:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *overallButton;
+@property (strong, nonatomic) IBOutlet UIButton *buttonEventOne;
+@property (strong, nonatomic) IBOutlet UIButton *buttonEventTwo;
+@property (strong, nonatomic) IBOutlet UIButton *buttonEventThree;
+@property (strong, nonatomic) IBOutlet UIButton *buttonEventFour;
+@property (strong, nonatomic) IBOutlet UIButton *buttonEventFive;
+@property (strong, nonatomic) IBOutlet UIButton *buttonEventSix;
+@property (strong, nonatomic) IBOutlet UIButton *buttonConstrain;
+
+@property (strong, nonatomic) IBOutlet UILabel *titleText;
+@property (strong, nonatomic) IBOutlet UILabel *workoutLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *constrainIcon;
+@property (strong, nonatomic) NSString *column;
+
+- (IBAction)swipeClosedMenu:(UISwipeGestureRecognizer*)sender;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeLeftGesture;
+
+- (IBAction)swipedMenu:(UISwipeGestureRecognizer*)sender;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeGesture;
+
+- (IBAction)userPinched:(UIPinchGestureRecognizer*)sender;
+@property (strong, nonatomic) IBOutlet UIPinchGestureRecognizer *pinchGesture;
+
+
+
+
 
 @end
