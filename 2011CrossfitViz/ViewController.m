@@ -59,6 +59,7 @@
     constrainIconFrame = constrainIcon.frame;
     
     [constrainIcon setHidden:YES];
+
     
 //    overallButtonFrame.origin.x -= 30;
 //    eventOneFrame.origin.x -= 30;
@@ -127,6 +128,7 @@
     //NSMutableArray *xFitArray = [[NSMutableArray alloc] init];
     @try {
         eventNum = 0;
+        workoutLabel.text = @"";
         titleText.text = @"Overall Points";
         [self.canv whichEvent:eventNum];
         [xFitArray removeAllObjects];
@@ -564,20 +566,20 @@
     if (constrainIcon.hidden == NO){
     CGPoint touch = [sender locationOfTouch:0 inView:self.canv];
     if(touch.x > 900){
-    int heightConstraint = 67;
+    
     
     CGFloat scale = [(UIPinchGestureRecognizer *)sender scale];
-    if (heightConstraint > 54 && heightConstraint < 81){
-            heightConstraint = heightConstraint *(sender.scale / 1.5);
-        NSLog(@"HeightConstraint is %d", heightConstraint);
+    int heightConstraint = 80 *(sender.scale/1.5);
+    if (heightConstraint < 54 || heightConstraint > 81){
+        return;
     }
-    
-    NSString *resultString = [[NSString alloc] initWithFormat:@"%d'",heightConstraint];
-    heightLabel.text = resultString;
-    
-    CGAffineTransform stretch = CGAffineTransformMakeScale(1, sender.scale);
-    [constrainIcon setTransform:stretch];
-    
+        NSString *resultString = [[NSString alloc] initWithFormat:@"%d'",heightConstraint];
+        heightLabel.text = resultString;
+        
+        CGAffineTransform stretch = CGAffineTransformMakeScale(1, sender.scale);
+        [constrainIcon setTransform:stretch];
+        
+        
     NSString *eventColumn;
     
     if (eventNum== 0){
