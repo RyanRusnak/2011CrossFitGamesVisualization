@@ -179,6 +179,13 @@
                                     <action selector="constrainByHeight:" destination="2" eventType="touchUpInside" id="3Tp-TC-dZc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" minimumFontSize="10" id="2Vm-5M-XJ7">
+                                <rect key="frame" x="924" y="328" width="42" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -200,6 +207,7 @@
                         <outlet property="buttonEventTwo" destination="VqG-9z-D2e" id="9gQ-ik-qXS"/>
                         <outlet property="canv" destination="J0f-KQ-fWG" id="5IL-mF-BYj"/>
                         <outlet property="constrainIcon" destination="5KP-Kl-gaB" id="rMy-Pd-S0j"/>
+                        <outlet property="heightLabel" destination="2Vm-5M-XJ7" id="4al-XF-d0j"/>
                         <outlet property="overallButton" destination="g2f-D1-bxg" id="7k5-PJ-ODs"/>
                         <outlet property="pinchGesture" destination="LCj-2w-iYS" id="Sm1-dT-QMW"/>
                         <outlet property="swipeGesture" destination="wBy-Yk-loe" id="pIZ-zo-x96"/>
@@ -264,6 +272,7 @@
                 <relationship kind="outlet" name="buttonEventTwo" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="canv" candidateClass="DrawingClass"/>
                 <relationship kind="outlet" name="constrainIcon" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="heightLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="overallButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="pinchGesture" candidateClass="UIPinchGestureRecognizer"/>
                 <relationship kind="outlet" name="swipeGesture" candidateClass="UISwipeGestureRecognizer"/>

@@ -55,6 +55,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *workoutLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *constrainIcon;
 @property (strong, nonatomic) NSString *column;
+@property (strong, nonatomic) IBOutlet UILabel *heightLabel;
 
 - (IBAction)swipeClosedMenu:(UISwipeGestureRecognizer*)sender;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeLeftGesture;

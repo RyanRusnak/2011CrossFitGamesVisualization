@@ -28,6 +28,7 @@
 @synthesize constrainIcon;
 @synthesize canv;
 @synthesize column;
+@synthesize heightLabel;
 
 @synthesize xFitArray;
 @synthesize eventNum;
@@ -88,6 +89,7 @@
     [self setButtonConstrain:nil];
     [self setConstrainIcon:nil];
     [self setPinchGesture:nil];
+    [self setHeightLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -457,38 +459,48 @@
     if (constrainIcon.hidden == YES)
     {
     [constrainIcon setHidden:NO];
+    [heightLabel setHidden:NO];
     }else
     {
         [constrainIcon setHidden:YES];
+        [heightLabel setHidden:YES];
     }
 }
 
 - (IBAction)swipeClosedMenu:(UISwipeGestureRecognizer*)sender {
     
     if (menuOpen == TRUE){
-    overallButtonFrame.origin = CGPointMake(overallButtonFrame.origin.x-150, overallButtonFrame.origin.y);
-    overallButton.frame = overallButtonFrame;
+        [UIView animateWithDuration:0.4
+                              delay:0
+                            options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveEaseInOut
+                         animations:^(void){
+                             overallButtonFrame.origin = CGPointMake(overallButtonFrame.origin.x-150, overallButtonFrame.origin.y);
+                             overallButton.frame = overallButtonFrame;
+                             
+                             eventOneFrame.origin = CGPointMake(eventOneFrame.origin.x-150, eventOneFrame.origin.y);
+                             buttonEventOne.frame = eventOneFrame;
+                             
+                             eventTwoFrame.origin = CGPointMake(eventTwoFrame.origin.x-150, eventTwoFrame.origin.y);
+                             buttonEventTwo.frame = eventTwoFrame;
+                             
+                             eventThreeFrame.origin = CGPointMake(eventThreeFrame.origin.x-128, eventThreeFrame.origin.y);
+                             buttonEventThree.frame = eventThreeFrame;
+                             
+                             eventFourFrame.origin = CGPointMake(eventFourFrame.origin.x-150, eventFourFrame.origin.y);
+                             buttonEventFour.frame = eventFourFrame;
+                             
+                             eventFiveFrame.origin = CGPointMake(eventFiveFrame.origin.x-150, eventFiveFrame.origin.y);
+                             buttonEventFive.frame = eventFiveFrame;
+                             
+                             eventSixFrame.origin = CGPointMake(eventSixFrame.origin.x-150, eventSixFrame.origin.y);
+                             buttonEventSix.frame = eventSixFrame;
+                             
+                             buttonConstrainFrame.origin = CGPointMake(buttonConstrainFrame.origin.x-150, buttonConstrainFrame.origin.y);
+                             buttonConstrain.frame = buttonConstrainFrame;
+                         }
+                         completion:^(BOOL finished){
+                         }];
     
-    eventOneFrame.origin = CGPointMake(eventOneFrame.origin.x-150, eventOneFrame.origin.y);
-    buttonEventOne.frame = eventOneFrame;
-    
-    eventTwoFrame.origin = CGPointMake(eventTwoFrame.origin.x-150, eventTwoFrame.origin.y);
-    buttonEventTwo.frame = eventTwoFrame;
-    
-    eventThreeFrame.origin = CGPointMake(eventThreeFrame.origin.x-128, eventThreeFrame.origin.y);
-    buttonEventThree.frame = eventThreeFrame;
-    
-    eventFourFrame.origin = CGPointMake(eventFourFrame.origin.x-150, eventFourFrame.origin.y);
-    buttonEventFour.frame = eventFourFrame;
-    
-    eventFiveFrame.origin = CGPointMake(eventFiveFrame.origin.x-150, eventFiveFrame.origin.y);
-    buttonEventFive.frame = eventFiveFrame;
-    
-    eventSixFrame.origin = CGPointMake(eventSixFrame.origin.x-150, eventSixFrame.origin.y);
-    buttonEventSix.frame = eventSixFrame;
-        
-    buttonConstrainFrame.origin = CGPointMake(buttonConstrainFrame.origin.x-150, buttonConstrainFrame.origin.y);
-    buttonConstrain.frame = buttonConstrainFrame;
     menuOpen = FALSE;
     }
 }
@@ -497,29 +509,37 @@
 - (IBAction)swipedMenu:(UISwipeGestureRecognizer*)sender {
     
     if(menuOpen == FALSE){
-    overallButtonFrame.origin = CGPointMake(overallButtonFrame.origin.x+150, overallButtonFrame.origin.y);
-    overallButton.frame = overallButtonFrame;
+        [UIView animateWithDuration:0.4
+                              delay:0
+                            options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveEaseInOut
+                         animations:^(void){
+                             overallButtonFrame.origin = CGPointMake(overallButtonFrame.origin.x+150, overallButtonFrame.origin.y);
+                             overallButton.frame = overallButtonFrame;
+                             
+                             eventOneFrame.origin = CGPointMake(eventOneFrame.origin.x+150, eventOneFrame.origin.y);
+                             buttonEventOne.frame = eventOneFrame;
+                             
+                             eventTwoFrame.origin = CGPointMake(eventTwoFrame.origin.x+150, eventTwoFrame.origin.y);
+                             buttonEventTwo.frame = eventTwoFrame;
+                             
+                             eventThreeFrame.origin = CGPointMake(eventThreeFrame.origin.x+128, eventThreeFrame.origin.y);
+                             buttonEventThree.frame = eventThreeFrame;
+                             
+                             eventFourFrame.origin = CGPointMake(eventFourFrame.origin.x+150, eventFourFrame.origin.y);
+                             buttonEventFour.frame = eventFourFrame;
+                             
+                             eventFiveFrame.origin = CGPointMake(eventFiveFrame.origin.x+150, eventFiveFrame.origin.y);
+                             buttonEventFive.frame = eventFiveFrame;
+                             
+                             eventSixFrame.origin = CGPointMake(eventSixFrame.origin.x+150, eventSixFrame.origin.y);
+                             buttonEventSix.frame = eventSixFrame;
+                             
+                             buttonConstrainFrame.origin = CGPointMake(buttonConstrainFrame.origin.x+150, buttonConstrainFrame.origin.y);
+                             buttonConstrain.frame = buttonConstrainFrame;
+                         }
+                         completion:^(BOOL finished){
+                         }];
     
-    eventOneFrame.origin = CGPointMake(eventOneFrame.origin.x+150, eventOneFrame.origin.y);
-    buttonEventOne.frame = eventOneFrame;
-    
-    eventTwoFrame.origin = CGPointMake(eventTwoFrame.origin.x+150, eventTwoFrame.origin.y);
-    buttonEventTwo.frame = eventTwoFrame;
-    
-    eventThreeFrame.origin = CGPointMake(eventThreeFrame.origin.x+128, eventThreeFrame.origin.y);
-    buttonEventThree.frame = eventThreeFrame;
-    
-    eventFourFrame.origin = CGPointMake(eventFourFrame.origin.x+150, eventFourFrame.origin.y);
-    buttonEventFour.frame = eventFourFrame;
-    
-    eventFiveFrame.origin = CGPointMake(eventFiveFrame.origin.x+150, eventFiveFrame.origin.y);
-    buttonEventFive.frame = eventFiveFrame;
-    
-    eventSixFrame.origin = CGPointMake(eventSixFrame.origin.x+150, eventSixFrame.origin.y);
-    buttonEventSix.frame = eventSixFrame;
-    
-    buttonConstrainFrame.origin = CGPointMake(buttonConstrainFrame.origin.x+150, buttonConstrainFrame.origin.y);
-    buttonConstrain.frame = buttonConstrainFrame;
     menuOpen = TRUE;
     }
 }
@@ -532,10 +552,8 @@
             heightConstraint = heightConstraint *(sender.scale / 1.5);
     }
     
-    NSString *resultString = [[NSString alloc] initWithFormat:
-                              @"Pinch - scale = %f, Height:%d",
-                              scale, heightConstraint];
-    titleText.text = resultString;
+    NSString *resultString = [[NSString alloc] initWithFormat:@"%d'",heightConstraint];
+    heightLabel.text = resultString;
     
     CGAffineTransform stretch = CGAffineTransformMakeScale(1, sender.scale);
     [constrainIcon setTransform:stretch];

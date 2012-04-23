@@ -37,7 +37,7 @@
         CGContextRef context = UIGraphicsGetCurrentContext();
         CGContextSetAlpha(context, .5);
         
-        CGRect r = CGRectMake((((XFitData *)obj).weight*5)-320,-1*(((XFitData *)obj).event/100)+720,5,5);
+        CGRect r = CGRectMake((((XFitData *)obj).weight*5)-420,-1*(((XFitData *)obj).event/100)+720,5,5);
         
         if ([((XFitData *)obj).gender isEqualToString:@"M"]){
             CGContextSetFillColorWithColor(context, [UIColor blueColor].CGColor);
@@ -56,7 +56,7 @@
             CGContextRef context = UIGraphicsGetCurrentContext();
             CGContextSetAlpha(context, .5);
             
-            CGRect r = CGRectMake((((XFitData *)obj).weight*5)-320,-1*(((XFitData *)obj).event*1.5)+720,5,5);
+            CGRect r = CGRectMake((((XFitData *)obj).weight*5)-420,-1*(((XFitData *)obj).event*1.5)+720,5,5);
             
             if ([((XFitData *)obj).gender isEqualToString:@"M"]){
                 CGContextSetFillColorWithColor(context, [UIColor blueColor].CGColor);
@@ -74,7 +74,7 @@
             CGContextRef context = UIGraphicsGetCurrentContext();
             CGContextSetAlpha(context, .5);
             
-            CGRect r = CGRectMake((((XFitData *)obj).weight*5)-320,-1*(((XFitData *)obj).event)+720,5,5);
+            CGRect r = CGRectMake((((XFitData *)obj).weight*5)-420,-1*(((XFitData *)obj).event)+720,5,5);
             
             if ([((XFitData *)obj).gender isEqualToString:@"M"]){
                 CGContextSetFillColorWithColor(context, [UIColor blueColor].CGColor);
@@ -92,7 +92,7 @@
             CGContextRef context = UIGraphicsGetCurrentContext();
             CGContextSetAlpha(context, .5);
             
-            CGRect r = CGRectMake((((XFitData *)obj).weight*5)-320,-1*(((XFitData *)obj).event*7)+720,5,5);
+            CGRect r = CGRectMake((((XFitData *)obj).weight*5)-420,-1*(((XFitData *)obj).event*7)+720,5,5);
             
             if ([((XFitData *)obj).gender isEqualToString:@"M"]){
                 CGContextSetFillColorWithColor(context, [UIColor blueColor].CGColor);
@@ -110,7 +110,7 @@
             CGContextRef context = UIGraphicsGetCurrentContext();
             CGContextSetAlpha(context, .5);
             
-            CGRect r = CGRectMake((((XFitData *)obj).weight*5)-320,-1*(((XFitData *)obj).event*3.5)+720,5,5);
+            CGRect r = CGRectMake((((XFitData *)obj).weight*5)-420,-1*(((XFitData *)obj).event*3.5)+720,5,5);
             
             if ([((XFitData *)obj).gender isEqualToString:@"M"]){
                 CGContextSetFillColorWithColor(context, [UIColor blueColor].CGColor);
@@ -128,7 +128,7 @@
             CGContextRef context = UIGraphicsGetCurrentContext();
             CGContextSetAlpha(context, .5);
             
-            CGRect r = CGRectMake((((XFitData *)obj).weight*5)-320,-1*(((XFitData *)obj).event*1.2)+720,5,5);
+            CGRect r = CGRectMake((((XFitData *)obj).weight*5)-420,-1*(((XFitData *)obj).event*1.2)+720,5,5);
             
             if ([((XFitData *)obj).gender isEqualToString:@"M"]){
                 CGContextSetFillColorWithColor(context, [UIColor blueColor].CGColor);
@@ -146,7 +146,7 @@
             CGContextRef context = UIGraphicsGetCurrentContext();
             CGContextSetAlpha(context, .5);
             
-            CGRect r = CGRectMake((((XFitData *)obj).weight*5)-320,-1*(((XFitData *)obj).event*3.5)+720,5,5);
+            CGRect r = CGRectMake((((XFitData *)obj).weight*5)-420,-1*(((XFitData *)obj).event*3.5)+720,5,5);
             
             if ([((XFitData *)obj).gender isEqualToString:@"M"]){
                 CGContextSetFillColorWithColor(context, [UIColor blueColor].CGColor);
@@ -159,25 +159,7 @@
             
         }];
     }
-    
-    
-//    for (XFitData *xfitdata in xFitArray){
-//        
-//        CGContextRef context = UIGraphicsGetCurrentContext();
-//        CGContextSetAlpha(context, .5);
-//        
-//        CGRect r = CGRectMake((xfitdata.weight*5)-320,-1*(xfitdata.event/100)+720,5,5);
-//        
-//        if ([xfitdata.gender isEqualToString:@"M"]){
-//            CGContextSetFillColorWithColor(context, [UIColor blueColor].CGColor);
-//            CGContextFillPath(context);
-//        } else{
-//            CGContextSetFillColorWithColor(context, [UIColor redColor].CGColor);
-//            CGContextFillPath(context);
-//        }
-//       CGContextAddEllipseInRect(context, r);
-//
-//    }
+
 }
 
 
