@@ -26,12 +26,15 @@
     CGRect eventSixFrame;
     CGRect buttonConstrainFrame;
     CGRect constrainIconFrame;
+    CGRect weightLabelFrame;
+    CGRect totalPointsLabelFrame;
     
     BOOL menuOpen;
 }
 @property (readwrite) NSInteger eventNum;
 @property (nonatomic, strong) NSMutableArray *xFitArray;
 @property (strong, nonatomic) IBOutlet DrawingClass *canv;
+@property (readwrite) NSInteger currentHeight;
 
 - (IBAction)showOverall:(id)sender;
 - (IBAction)showEventOne:(id)sender;
@@ -56,6 +59,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *constrainIcon;
 @property (strong, nonatomic) NSString *column;
 @property (strong, nonatomic) IBOutlet UILabel *heightLabel;
+@property (strong, nonatomic) IBOutlet UILabel *totalPointsLabel;
+@property (strong, nonatomic) IBOutlet UILabel *weightLabel;
 
 - (IBAction)swipeClosedMenu:(UISwipeGestureRecognizer*)sender;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeLeftGesture;

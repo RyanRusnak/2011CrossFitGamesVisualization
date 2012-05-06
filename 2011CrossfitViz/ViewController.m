@@ -29,9 +29,12 @@
 @synthesize canv;
 @synthesize column;
 @synthesize heightLabel;
+@synthesize totalPointsLabel;
+@synthesize weightLabel;
 
 @synthesize xFitArray;
 @synthesize eventNum;
+@synthesize currentHeight;
 
 - (void)didReceiveMemoryWarning
 {
@@ -57,17 +60,17 @@
     eventSixFrame = buttonEventSix.frame;
     buttonConstrainFrame = buttonConstrain.frame;
     constrainIconFrame = constrainIcon.frame;
+    weightLabelFrame = weightLabel.frame;
+    totalPointsLabelFrame = totalPointsLabel.frame;
     
     [constrainIcon setHidden:YES];
-
     
-//    overallButtonFrame.origin.x -= 30;
-//    eventOneFrame.origin.x -= 30;
-//    eventTwoFrame.origin.x -= 30;
-//    eventThreeFrame.origin.x -= 20;
-//    eventFourFrame.origin.x -= 30;
-//    eventFiveFrame.origin.x -= 30;
-//    eventSixFrame.origin.x -= 30;
+    weightLabelFrame.origin = CGPointMake(weightLabelFrame.origin.x, weightLabelFrame.origin.y+20);
+    weightLabel.frame = weightLabelFrame;
+    totalPointsLabelFrame.origin = CGPointMake(totalPointsLabelFrame.origin.x+100, totalPointsLabelFrame.origin.y);
+    totalPointsLabel.frame = totalPointsLabelFrame;
+    
+    currentHeight = 60;
     
     [super viewDidLoad];
 
@@ -92,6 +95,8 @@
     [self setConstrainIcon:nil];
     [self setPinchGesture:nil];
     [self setHeightLabel:nil];
+    [self setTotalPointsLabel:nil];
+    [self setWeightLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -120,7 +125,8 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return YES;
+    return
+    UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
 - (IBAction)showOverall:(id)sender {
@@ -179,7 +185,7 @@
     @try {
         eventNum = 1;
         titleText.text = @"Event One 2011";
-        workoutLabel.text = @"10 minute AMRAP: 30 Double-unders 15 Power snatches";
+        workoutLabel.text = @"10 minute AMRAP:\n 30 Double-unders\n 15 Power snatches";
         [self.canv whichEvent:eventNum];
         [xFitArray removeAllObjects];
         NSFileManager *fileMgr = [NSFileManager defaultManager];
@@ -229,7 +235,7 @@
     @try {
         eventNum = 2;
         titleText.text = @"Event Two 2011";
-        workoutLabel.text = @"15 minute AMRAP: 9 Deadlifts (155lbs / 70kg) 12 Push-ups 15 Box jumps (24 inch)";
+        workoutLabel.text = @"15 minute AMRAP:\n 9 Deadlifts (155lbs / 70kg)\n 12 Push-ups\n 15 Box jumps (24 inch)";
         [self.canv whichEvent:eventNum];
         [xFitArray removeAllObjects];
         NSFileManager *fileMgr = [NSFileManager defaultManager];
@@ -277,7 +283,7 @@
     @try {
         eventNum = 3;
         titleText.text = @"Event Three 2011";
-        workoutLabel.text = @"5 minute AMRAP: 165 pound Squat clean 165 pound Jerk";
+        workoutLabel.text = @"5 minute AMRAP:\n 165 pound Squat clean\n 165 pound Jerk";
         [self.canv whichEvent:eventNum];
         [xFitArray removeAllObjects];
         NSFileManager *fileMgr = [NSFileManager defaultManager];
@@ -324,7 +330,7 @@
     @try {
         eventNum = 4;
         titleText.text = @"Event Four 2011";
-        workoutLabel.text = @"10 minute AMRAP: 60 Bar-facing burpees120 pound Overhead squat, 30 reps10 Muscle-ups";
+        workoutLabel.text = @"10 minute AMRAP:\n 60 Bar-facing burpees\n 120 pound Overhead squat 30 reps\n 10 Muscle-ups";
         [self.canv whichEvent:eventNum];
         [xFitArray removeAllObjects];
         NSFileManager *fileMgr = [NSFileManager defaultManager];
@@ -372,7 +378,7 @@
     @try {
         eventNum = 5;
         titleText.text = @"Event Five 2011";
-        workoutLabel.text = @"20 minute AMRAP: 5 Power cleans (145lbs / 65kg) 10 Toes to bar 15 Wall balls (20lbs to 10' target) ";
+        workoutLabel.text = @"20 minute AMRAP:\n 5 Power cleans (145lbs / 65kg)\n 10 Toes to bar\n 15 Wall balls (20lbs to 10' target) ";
         [self.canv whichEvent:eventNum];
         [xFitArray removeAllObjects];
         NSFileManager *fileMgr = [NSFileManager defaultManager];
@@ -420,7 +426,7 @@
     @try {
         eventNum = 6;
         titleText.text = @"Event Six 2011";
-        workoutLabel.text = @"7 minute AMRAP: 3 Barbell Thrusters 3 Chest to bar Pull-ups 6 Barbell Thrusters 6 Chest to bar Pull-ups 9 Barbell Thrusters 9 Chest to bar Pull-ups 12 Barbell Thrusters 12 Chest to bar Pull-ups 15 Barbell Thrusters 15 Chest to bar Pull-ups 18 Barbell Thrusters 18 Chest to bar Pull-ups 21 Barbell Thrusters 21 Chest to bar Pull-ups... This is a timed workout. If you complete the round of 21, go on to 24. If you complete 24, go on to 27, etc. ";
+        workoutLabel.text = @"7 minute AMRAP:\n 3 Barbell Thrusters\n 3 Chest to bar Pull-ups\n 6 Barbell Thrusters\n 6 Chest to bar Pull-ups\n 9 Barbell Thrusters\n 9 Chest to bar Pull-ups\n 12 Barbell Thrusters\n 12 Chest to bar Pull-ups\n 15 Barbell Thrusters\n 15 Chest to bar Pull-ups\n 18 Barbell Thrusters\n 18 Chest to bar Pull-ups\n 21 Barbell Thrusters\n 21 Chest to bar Pull-ups, etc";
         [self.canv whichEvent:eventNum];
         [xFitArray removeAllObjects];
         NSFileManager *fileMgr = [NSFileManager defaultManager];
@@ -510,6 +516,11 @@
                              
                              buttonConstrainFrame.origin = CGPointMake(buttonConstrainFrame.origin.x-150, buttonConstrainFrame.origin.y);
                              buttonConstrain.frame = buttonConstrainFrame;
+                             
+                             weightLabelFrame.origin = CGPointMake(weightLabelFrame.origin.x, weightLabelFrame.origin.y+20);
+                             weightLabel.frame = weightLabelFrame;
+                             totalPointsLabelFrame.origin = CGPointMake(totalPointsLabelFrame.origin.x+50, totalPointsLabelFrame.origin.y);
+                             totalPointsLabel.frame = totalPointsLabelFrame;
                          }
                          completion:^(BOOL finished){
                          }];
@@ -553,6 +564,11 @@
                              
                              buttonConstrainFrame.origin = CGPointMake(buttonConstrainFrame.origin.x+150, buttonConstrainFrame.origin.y);
                              buttonConstrain.frame = buttonConstrainFrame;
+                             
+                             weightLabelFrame.origin = CGPointMake(weightLabelFrame.origin.x, weightLabelFrame.origin.y-20);
+                             weightLabel.frame = weightLabelFrame;
+                             totalPointsLabelFrame.origin = CGPointMake(totalPointsLabelFrame.origin.x-50, totalPointsLabelFrame.origin.y);
+                             totalPointsLabel.frame = totalPointsLabelFrame;
                          }
                          completion:^(BOOL finished){
                          }];
@@ -563,87 +579,121 @@
 }
 - (IBAction)userPinched:(UIPinchGestureRecognizer*)sender {
     
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        currentHeight *= sender.scale;
+        if (currentHeight > 81) currentHeight = 81;
+        else if (currentHeight < 54) currentHeight = 54;
+        NSLog(@"Pinch Ended!");
+    }
+    else if (sender.state == UIGestureRecognizerStateBegan) {
+        NSLog(@"Pinch started!");
+    }
+    
+    
     if (constrainIcon.hidden == NO){
-    CGPoint touch = [sender locationOfTouch:0 inView:self.canv];
-    if(touch.x > 900){
-    
-    
-    CGFloat scale = [(UIPinchGestureRecognizer *)sender scale];
-    int heightConstraint = 80 *(sender.scale/1.5);
-    if (heightConstraint < 54 || heightConstraint > 81){
-        return;
-    }
-        NSString *resultString = [[NSString alloc] initWithFormat:@"%d'",heightConstraint];
-        heightLabel.text = resultString;
-        
-        CGAffineTransform stretch = CGAffineTransformMakeScale(1, sender.scale);
-        [constrainIcon setTransform:stretch];
-        
-        
-    NSString *eventColumn;
-    
-    if (eventNum== 0){
-        eventColumn = @"overall_points";
-    }else if(eventNum == 1){
-        eventColumn = @"score1";
-    }else if(eventNum == 2){
-        eventColumn = @"score2";
-    }else if(eventNum == 3){
-        eventColumn = @"score3";
-    }else if(eventNum == 4){
-        eventColumn = @"score4";
-    }else if(eventNum == 5){
-        eventColumn = @"score5";
-    }else if(eventNum == 6){
-        eventColumn = @"score6";
-    }
-    
-    @try {
-        [xFitArray removeAllObjects];
-        NSFileManager *fileMgr = [NSFileManager defaultManager];
-        NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"xfit2011SQL.sqlite"];
-        BOOL success = [fileMgr fileExistsAtPath:dbPath];
-        if(!success)
-        {
-            NSLog(@"Cannot locate database file '%@'.", dbPath);
-        }
-        if(!(sqlite3_open([dbPath UTF8String], &db) == SQLITE_OK))
-        {
-            NSLog(@"An error has occured, %s", sqlite3_errmsg(db));
-           // NSLog(@"Event column:%@ and height: %d",eventColumn, heightConstraint);
-        }
-        const char *sql =[[NSString stringWithFormat:@"SELECT ID, Name, weight, height, %@, gender FROM  xfit2011 WHERE height = %d",eventColumn,heightConstraint] UTF8String];
-    
-        sqlite3_stmt *sqlStatement;
-        if(sqlite3_prepare(db, sql, -1, &sqlStatement, NULL) != SQLITE_OK)
-        {
-            NSLog(@"Problem with prepare statement");
-        }
-        
-        while (sqlite3_step(sqlStatement)==SQLITE_ROW) {
-            XFitData *myXFitData = [[XFitData alloc] init];
+        CGPoint touch = [sender locationOfTouch:0 inView:self.canv];
+        if(touch.x > 900){
             
-            myXFitData.ident = sqlite3_column_int(sqlStatement, 0);
-            myXFitData.name = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement,1)];
-            myXFitData.height = sqlite3_column_int(sqlStatement, 3);
-            myXFitData.weight = sqlite3_column_int(sqlStatement, 2);
-            myXFitData.event = sqlite3_column_int(sqlStatement, 4);
-            myXFitData.gender = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement,5)];
-            [xFitArray addObject:myXFitData];
+            int realheight = currentHeight*sender.scale;
+//            currentHeight*=sender.scale;
+            
+            //CGFloat scale = [(UIPinchGestureRecognizer *)sender scale];
+//            int heightConstraint = 80 *(sender.scale/1.5);
+//            if (heightConstraint < 54 || heightConstraint > 81){
+//                
+//                return;
+//            }
+
+            
+//            if (sender.scale < 0.8 || sender.scale > 1.4) {
+//                return;
+//            }  
+//            if (sender.scale > 1.4) {
+//                sender.scale = 1.4;
+//                return;
+//            }
+            if (realheight < 54 || realheight > 81){
+                NSLog(@"realheight is %d, scale is %f, currenHeight %d\n",realheight, sender.scale, currentHeight);
+                return;
+            }
+            
+            NSLog(@"scale is %f",sender.scale);
+            NSString *resultString = [[NSString alloc] initWithFormat:@"%d'",realheight];
+//            NSString *resultString = [[NSString alloc] initWithFormat:@"%d'",heightConstraint];
+            heightLabel.text = resultString;
+            
+            CGAffineTransform stretch = CGAffineTransformMakeScale(1, sender.scale);
+            [constrainIcon setTransform:stretch];
+            
+            
+            NSString *eventColumn;
+            
+            if (eventNum== 0){
+                eventColumn = @"overall_points";
+            }else if(eventNum == 1){
+                eventColumn = @"score1";
+            }else if(eventNum == 2){
+                eventColumn = @"score2";
+            }else if(eventNum == 3){
+                eventColumn = @"score3";
+            }else if(eventNum == 4){
+                eventColumn = @"score4";
+            }else if(eventNum == 5){
+                eventColumn = @"score5";
+            }else if(eventNum == 6){
+                eventColumn = @"score6";
+            }
+            
+            @try {
+                [xFitArray removeAllObjects];
+                NSFileManager *fileMgr = [NSFileManager defaultManager];
+                NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"xfit2011SQL.sqlite"];
+                BOOL success = [fileMgr fileExistsAtPath:dbPath];
+                if(!success)
+                {
+                    NSLog(@"Cannot locate database file '%@'.", dbPath);
+                }
+                if(!(sqlite3_open([dbPath UTF8String], &db) == SQLITE_OK))
+                {
+                    NSLog(@"An error has occured, %s", sqlite3_errmsg(db));
+                    // NSLog(@"Event column:%@ and height: %d",eventColumn, heightConstraint);
+                }
+                const char *sql =[[NSString stringWithFormat:@"SELECT ID, Name, weight, height, %@, gender FROM  xfit2011 WHERE height = %d",eventColumn,realheight] UTF8String];
+//
+//                const char *sql =[[NSString stringWithFormat:@"SELECT ID, Name, weight, height, %@, gender FROM  xfit2011 WHERE height = %d",eventColumn,heightConstraint] UTF8String];
+
+                
+                
+                sqlite3_stmt *sqlStatement;
+                if(sqlite3_prepare(db, sql, -1, &sqlStatement, NULL) != SQLITE_OK)
+                {
+                    NSLog(@"Problem with prepare statement");
+                }
+                
+                while (sqlite3_step(sqlStatement)==SQLITE_ROW) {
+                    XFitData *myXFitData = [[XFitData alloc] init];
+                    
+                    myXFitData.ident = sqlite3_column_int(sqlStatement, 0);
+                    myXFitData.name = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement,1)];
+                    myXFitData.height = sqlite3_column_int(sqlStatement, 3);
+                    myXFitData.weight = sqlite3_column_int(sqlStatement, 2);
+                    myXFitData.event = sqlite3_column_int(sqlStatement, 4);
+                    myXFitData.gender = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement,5)];
+                    [xFitArray addObject:myXFitData];
+                }
+                sqlite3_finalize(sqlStatement);
+                sqlite3_close(db);
+                [self.canv fillXFitArray:xFitArray];
+                [self.view setNeedsDisplay];
+                
+            }
+            @catch (NSException *exception) {
+                NSLog(@"An exception occured: %@", [exception reason]);
+            }
+            @finally {
+                //sqlite3_close(db);
+            } 
         }
-        sqlite3_finalize(sqlStatement);
-        sqlite3_close(db);
-        [self.canv fillXFitArray:xFitArray];
-        [self.view setNeedsDisplay];
-        
-    }
-    @catch (NSException *exception) {
-        NSLog(@"An exception occured: %@", [exception reason]);
-    }
-    @finally {
-        //sqlite3_close(db);
-    } 
-}
     }
 }
 @end

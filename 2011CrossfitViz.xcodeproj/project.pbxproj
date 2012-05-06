@@ -22,6 +22,8 @@
 		498EC428153F655900F42F91 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 498EC427153F655900F42F91 /* libsqlite3.0.dylib */; };
 		498EC42C153F68F700F42F91 /* XFitData.m in Sources */ = {isa = PBXBuildFile; fileRef = 498EC42B153F68F700F42F91 /* XFitData.m */; };
 		498EC436153FC10800F42F91 /* DrawingClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 498EC435153FC10800F42F91 /* DrawingClass.m */; };
+		49B150441547477D008BE76C /* xFit2011Icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B150431547477D008BE76C /* xFit2011Icon2.png */; };
+		49B8399B1547339C00D3656A /* xFit2011Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B8399A1547339B00D3656A /* xFit2011Icon.png */; };
 		49CB70111531E069006C620F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CB70101531E069006C620F /* UIKit.framework */; };
 		49CB70131531E069006C620F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CB70121531E069006C620F /* Foundation.framework */; };
 		49CB70151531E069006C620F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CB70141531E069006C620F /* CoreGraphics.framework */; };
@@ -51,6 +53,8 @@
 		498EC42B153F68F700F42F91 /* XFitData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFitData.m; sourceTree = "<group>"; };
 		498EC434153FC10800F42F91 /* DrawingClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingClass.h; sourceTree = "<group>"; };
 		498EC435153FC10800F42F91 /* DrawingClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingClass.m; sourceTree = "<group>"; };
+		49B150431547477D008BE76C /* xFit2011Icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xFit2011Icon2.png; sourceTree = "<group>"; };
+		49B8399A1547339B00D3656A /* xFit2011Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xFit2011Icon.png; sourceTree = "<group>"; };
 		49CB700C1531E069006C620F /* 2011CrossfitViz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2011CrossfitViz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49CB70101531E069006C620F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49CB70121531E069006C620F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -94,6 +98,8 @@
 		49CB70011531E069006C620F = {
 			isa = PBXGroup;
 			children = (
+				49B150431547477D008BE76C /* xFit2011Icon2.png */,
+				49B8399A1547339B00D3656A /* xFit2011Icon.png */,
 				49CB70161531E069006C620F /* 2011CrossfitViz */,
 				49CB700F1531E069006C620F /* Frameworks */,
 				49CB700D1531E069006C620F /* Products */,
@@ -224,6 +230,8 @@
 				490236B41545070900F73253 /* xFitButtonTotal.png in Resources */,
 				490236B61545096700F73253 /* xFitButton113_2.png in Resources */,
 				49F6B05E1545F0C200CA44E2 /* Bank Gothic in Resources */,
+				49B8399B1547339C00D3656A /* xFit2011Icon.png in Resources */,
+				49B150441547477D008BE76C /* xFit2011Icon2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

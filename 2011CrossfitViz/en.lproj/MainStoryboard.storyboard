@@ -38,7 +38,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total Points" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="10" id="fgt-nA-ypM">
-                                <rect key="frame" x="942" y="360" width="62" height="55"/>
+                                <rect key="frame" x="915" y="340" width="62" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,7 +60,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="xfitConstrainMan.png" id="5KP-Kl-gaB">
-                                <rect key="frame" x="887" y="232" width="117" height="283"/>
+                                <rect key="frame" x="835" y="232" width="117" height="283"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VqG-9z-D2e">
@@ -153,7 +153,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="5" minimumFontSize="10" id="VX3-bE-hg4">
-                                <rect key="frame" x="762" y="21" width="242" height="147"/>
+                                <rect key="frame" x="660" y="21" width="344" height="147"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="20"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -182,24 +182,10 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" minimumFontSize="10" id="2Vm-5M-XJ7">
-                                <rect key="frame" x="924" y="328" width="42" height="33"/>
+                                <rect key="frame" x="872" y="328" width="42" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="yd2-U1-L01">
-                                <rect key="frame" x="75" y="693" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="300" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="aOx-jy-osw">
-                                <rect key="frame" x="952" y="707" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -229,6 +215,8 @@
                         <outlet property="swipeGesture" destination="wBy-Yk-loe" id="pIZ-zo-x96"/>
                         <outlet property="swipeLeftGesture" destination="FD7-Vd-wmG" id="iu5-zX-mvl"/>
                         <outlet property="titleText" destination="6D9-1c-Y0y" id="gD2-6C-Aba"/>
+                        <outlet property="totalPointsLabel" destination="fgt-nA-ypM" id="q6C-tK-eoQ"/>
+                        <outlet property="weightLabel" destination="5iS-N9-Wi7" id="S8f-x0-Sv6"/>
                         <outlet property="workoutLabel" destination="VX3-bE-hg4" id="pim-Ki-LLe"/>
                     </connections>
                 </viewController>
@@ -261,9 +249,48 @@
         <image name="xfitConstrainMan.png" width="141" height="425"/>
         <image name="xfitbutton112.png" width="144" height="76"/>
     </resources>
+    <classes>
+        <class className="DrawingClass" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DrawingClass.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="constrainByHeight:"/>
+                <relationship kind="action" name="showEventFive:"/>
+                <relationship kind="action" name="showEventFour:"/>
+                <relationship kind="action" name="showEventOne:"/>
+                <relationship kind="action" name="showEventSix:"/>
+                <relationship kind="action" name="showEventThree:"/>
+                <relationship kind="action" name="showEventTwo:"/>
+                <relationship kind="action" name="showOverall:"/>
+                <relationship kind="action" name="swipeClosedMenu:" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="action" name="swipedMenu:" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="action" name="userPinched:" candidateClass="UIPinchGestureRecognizer"/>
+                <relationship kind="outlet" name="buttonConstrain" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonEventFive" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonEventFour" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonEventOne" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonEventSix" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonEventThree" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonEventTwo" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="canv" candidateClass="DrawingClass"/>
+                <relationship kind="outlet" name="constrainIcon" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="heightLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="overallButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="pinchGesture" candidateClass="UIPinchGestureRecognizer"/>
+                <relationship kind="outlet" name="swipeGesture" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="swipeLeftGesture" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="titleText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalPointsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="weightLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="workoutLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
-        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>
